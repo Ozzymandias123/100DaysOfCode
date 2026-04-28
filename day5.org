@@ -1,0 +1,65 @@
+#+title: 100 Days of Python - Day 5
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del quinto día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
+
+* Day 5 - For Loops, Range and Code Blocks
+
+** Loops
+Tareas que se repiten una y otra vez hasta el infinito cuando la condición es verdadera, pero se detiene cuando la condición es falsa.
+
+#+begin_src python
+
+# sintaxis de un for loop
+
+for item in list_of_items:
+    # Do something to each item
+
+#+end_src
+
+Se tiene que declarar una variable dentro del =for= para que funcione. En el ejemplo anterior se ve que =for item= /item/ es la variable que usará para almacenar los datos que hay en =list_of_items=.
+
+#+begin_src python
+
+# 1ro declaramos la lista
+fruits = ["Apple", "Peach", "Pear"]
+
+# ahora usamos la variable "fruit" para ingresar en la lista "fruits"
+for fruit_variable in fruits:
+    print(fruit_variable)
+# se imprime la variable fruit_variable
+
+#+end_src
+
+** sum()
+
+La función =sum()= sirve para sumar todos los valores numéricos que hay dentro una lista.
+
+#+begin_src python
+
+student_scores = [150, 150, 100]
+
+total_exam_score = sum(student_scores)
+print(total_exam_score)
+
+>> 400
+
+#+end_src
+
+** max()
+
+La función =max()= lo que hace es mostrar el valor más grande de una lista.
+
+#+begin_src python
+
+student_score = [200, 300, 500]
+print(max(student_score))
+
+>> 500
+
+#+end_src
+
+** range()
+Esta función sirve para que en vez de escribir una lista, se establezca un "rango" de dos valores, por ejemplo, un rango entre 1 y 100, eso significa que en el =for loop= se impriman 100 números ( no olvidar que el 1 se cuenta como 0, así que será desde el 1 al 99 ).
+
+Por su cuenta la función no hace nada, pero para que funcione debe tener otra función, en nuestro caso sería el =for loop=

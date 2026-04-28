@@ -1,0 +1,114 @@
+#+title: 100 Days of Python - Day 3
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del tercer día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
+
+* Day 3 - Conditional Statements, Logical Operators, Code Block and Scope
+
+Una =conditional statements= es cuando una tarea es positiva, realizar una acción, caso contrario hacer otra tarea.
+
+#+begin_src python
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+    print("You can ride the rollercoaster")
+else:
+    print("Sorry you have to grew taller before you can ride.")
+
+#+end_src
+
+** Nested conditional
+
+Se pueden agregar condicionales dentro condiciones.
+
+#+begin_src python
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+    print("You can ride the rollercoaster")
+    age = int(input("What is your age? "))
+    if age <= 18:
+        print("Must pay $7")
+    else:
+        print("Must pay $12")
+else:
+    print("Sorry you have to grew taller before you can ride.")
+
+#+end_src
+
+** Elif condition
+
+Sirve para poder anidar mejor las condionales, en caso de que una condición no sea true, checkeará la siguiente condición:
+
+
+#+begin_src python
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+    print("You can ride the rollercoaster")
+    age = int(input("What is your age? "))
+    if age <= 12: # para que esto se ejecute, height debe ser true
+        print("Please pay $5")
+    elif age <= 18:
+        print("Please pay $7")
+    elif age >= 45 and age <= 55:
+        print("Everything is going to be ok. Ride on us!.")
+    else:
+        print("Please pay $12")
+else:
+    print("Sorry you have to grew taller before you can ride.")
+
+#+end_src
+
+* Logical Operators
+Sirve para saber las condiciones en una sóla línea de código.
+
+En este caso se usa el =AND= lo cual deben ser dos conciones TRUE para que funcionen.
+
+Pero en caso de que UNO solo sea false, el final será resultado =FALSE=
+
+#+begin_src python
+
+
+# A and B debe ser True para que funcione
+a > 10 and a < 13
+
+#+end_src
+
+En caso de que se necesite que uno sea FALSE se usa el =or=
+
+#+begin_src python
+
+# usando el or para saber que uno sea FALSE
+
+a = 12
+
+a > 10 or a < 10
+
+>> TRUE
+#+end_src
+
+Si ambos son FALSE solo ahí será una condición FALSE, pero debe de haber si o sí uno o dos TRUE
+
+El =not= lo que hace es hacer el cambio a la inversa, si una condición no es TRUE da FALSE y si es FALSE da TRUE
+
+#+begin_src python
+
+# probando el not
+a = 12
+
+not a < 0
+>> TRUE
+
+# otra forma de verlo es:
+not FALSE
+>> TRUE
+not TRUE
+>> FALSE
+#+end_src

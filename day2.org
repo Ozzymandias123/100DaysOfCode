@@ -1,0 +1,172 @@
+#+title: 100 Days of Python - Day 2
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del segundo día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
+
+
+* Day 2 - Data Types, Numbers, Operations, Type Conversion, f-Strings
+** Data Types
+En pyhton existen 4 data types:
+- Strings: "Hello World"
+- Integer: 1,2,3, -4, -5...
+- Float: 1.2, 3.4, -4.2...
+- Boolean: True / False
+
+En caso de que quisieramos conseguir un =character= por separado de un string, podemos hacerlo de la siguiente manera.
+
+#+begin_src python
+
+# Subscripting
+# Los strings empiezan desde cero, así que en caso de querer sacar el character o, no usariamos el 5, sino el 4
+print("Hello"[4])
+
+>> o
+
+# Hay que tener en cuenta que los espacios también se cuentan como characteres
+name = "Hello World"
+print(name[4] + name[6]) # el 5 es el espacio.
+>> oW
+
+# También se puede usar números negativos, por ejemplo si ponemos -1 conseguiremos el 0 porque empieza desde atrás.
+
+print("Hello"[-1])
+
+>> o
+#+end_src
+
+En un string el operador =+= realiza una concatenación, mientras que en valores numéricos realiza una operación aritmética.
+
+#+begin_src python
+
+print(123 + 456)
+
+>> 468
+
+#+end_src
+
+*** Nota importante
+En caso de usar números enteros grandes, no se usan puntos ni comas, sino que en caso de querer diferenciarlos usar guiones bajos:
+
+=123_456_789=
+
+** Floating Point number
+Son números con puntos decimales.
+#+begin_src python
+
+print(3.141569)
+
+#+end_src
+
+** Boolean
+En este caso sirven para saber si un dato es True or False, se usará más adelante.
+
+* Type Error, Type Checking, Type Conversion
+
+Para evitar cualquier =TypeError= lo que hay que hacer es usar la función =type()=.
+
+#+begin_src python
+
+print(type("Hello"))
+
+>> <class 'str'>
+
+print(type(123))
+>> <class 'int'>
+
+print(type(123,3))
+>> <class 'float'>
+
+print(type(True))
+>> <class 'bool'>
+
+#+end_src
+
+** Type Conversion or Type Casting
+Sirve para convertir un Data Type a otro Data Type, como por ejemplo un =string= a un =int=
+
+#+begin_src python
+
+# string a int
+print(int("123" + int("456"))
+>> 569
+
+#+end_src
+
+*** Tener en cuenta
+No se pueden convertir cualquier valor, un string de characteres no puede ser un valor =int= porque no es ningún número. En caso de que se haga generará errores.
+
+#+begin_src python
+
+name_of_the_user = input("Enter your name")
+lenght_of_name = len(name_of_the_user)
+
+print("Number of letters in your name: " + str(lenght_of_name))
+
+#+end_src
+
+* Mathematical Operation in Python
+Es practicamente lo mismo que todos los lenguajes excepto por una gran diferencia, en especial en las divisiones.
+
+- + suma
+- - resta
+- * multiplicación
+- / división ( muestra decimales )
+- // división de enteros ( no muestra decimales )
+- ** para exponentes 2 ** 2 = 4
+- () paréntesis
+
+** Redondear floating point numbers
+Para redondear floating point numbers para que no sean más largos de lo normal, hay que usar la función =round()=
+
+#+begin_src python
+
+# usarlo más que nada en valores decimales muy largos.
+bmi = 86 / 1.65 ** 2
+print(round(bmi))
+
+# en caso de querer expecificar la cantidad de decimales hay que usar lo siguiente.
+
+# en este caso el valor final tendrá dos decimales luego del punto
+print(round(bmi, 2))
+
+#+end_src
+
+** Number manipulation
+En caso de que se quiera cambiar el valor de un número se puede usar lo siguiente.
+
+#+begin_src python
+
+score = 0
+
+# cambiar el valor de score
+score += 1
+
+# ahora score será
+
+score = 1
+
+#+end_src
+
+** fString
+Sirve para imprimir diferentes data types dentro un string:
+
+#+begin_src python
+
+score = 0
+height = 1.8
+is_winning = True
+
+# poner las variables dentro {...}
+print(f"Your score is = {score}, your height is {height}. Your are winning is {is_winning}")
+
+#+end_src
+
+*** Nota importante
+En caso de no querer usar la función =round()= se puede formatear de la siguiente manera, la cual es la más precisa.
+
+#+begin_src python
+
+# luego de los dos puntos, imprimirá dos decimales
+print(f"Each person should pay: ${each_person:.2f}")
+
+#+end_src

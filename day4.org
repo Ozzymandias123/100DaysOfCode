@@ -1,0 +1,110 @@
+#+title: 100 Days of Python - Day 4
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del cuarto día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
+
+* Randomisation and Python Lists
+
+Para generar randomisation en Python, hay que usar el módulo =random=. Para hacerlo hay que =import= al código. Lo que nos permite usar funciones ó módulos para poder generar números rándom. En ete caso será =random.randit()=
+
+#+begin_src python
+
+import random
+
+random_integer = random.randit(1, 10)
+print(random_integer)
+
+>> Al imprimirlo dará números diferentes que empiecen en 1 al 10
+
+#+end_src
+
+** Modules
+Cada módulo es responsable de diferentes funcionalidades de un programa.
+Para crear nuestro propio módulo es muy sencillo.
+
+Ejemplo: Primero crear un /file/ nuevo llamado =my_module.py=. Ahí se escribirán el código y luego para usarlo usar =import my_module= y listo.
+Seguir los pasos que aparece en el ejmplo de =random.rendint=
+
+*** Floating point random numbers
+Para imprimir números de punto flotante hay que hacer los mismos pasos, pero usar =random.random()=. ATENCIÖN: =NO escribir nada dentro los paréntesis.=
+
+También se pueden realizar operaciones como multiplicar valores, para eso hay que: =random_float = random.random() * 10=
+
+=Para saber más de los tipos de modules que se pueden usar, es bueno leer la documentación que está en la página de Python: docs.python.org=
+
+
+** Data Structure
+Es una forma de ordenar y estructurar datos, para eso se usan listas.
+
+#+begin_src python
+
+# una lista en python
+lista = ["Boca", "Riber", "San Lorenzo"]
+
+# las listas empiezan desde cero así que si queremos conseguir el primer dato de la lista hay que usar lo siguiente.
+print(lista[0])
+
+>> Boca
+
+# En caso de querer modificar un valor de la lista, hay que hacer lo siguiente
+lista[1] = "Riber"
+print(lista[1])
+
+>> Riber
+
+# para agregar datos nuevos en la lista:
+
+lista.append("Racing")
+print(lista)
+>> ['Boca', 'River', 'San Lorenzo', 'Racing']
+
+#+end_src
+
+*** Para conocer más de esto hay que leer la documentación de Python
+
+** Para imprimir una lista de forma random.
+#+begin_src python
+
+# En uno de los ejercicios nos piden que saquemos nombres random de una lista, para eso el random va dentro d los corchetes.
+
+import random
+
+friends = ["Alice", "Bob", "Charlie", "David", "Emanuel"]
+
+# Al establecer el index [0] los valores son integers, es por eso que se pueden conseguir estos valores usando el randint().
+# tambien tener en cuenta el alcance de la lista, acá es de 5 y por eso el 0 a 4. Porque el primer valor es 0
+random = friends[random.randint(0, 4)]
+
+print(random)
+
+#+end_src
+
+Pero también está el =module= para poder conseguir valores rándom en una lista, para eso se usa el =random.choice()=
+
+#+begin_src python
+
+import random
+
+friends = ["Alice", "Bob", "Charlie", "Emmanuel"]
+
+
+print(random.choice(friends))
+
+#+end_src
+
+
+** Nested Lists
+Se pueden agregar listas dentro otras listas:
+
+#+begin_src python
+
+list_uno = ["A", "B", "C"]
+list_dos = ["D", "E", "F"]
+
+listas = [list_uno, lists_dos]
+
+print(listas)
+
+>> [["A", "B", "C"], ["D", "E", "F"]]
+
+#+end_src

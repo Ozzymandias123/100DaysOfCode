@@ -1,0 +1,110 @@
+#+title: 100 Days of Python - Day 1
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del primer día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
+
+* DAY 1
+** Printing, Commenting, Debugging, String Manipulation and Variables
+
+* Print function
+
+#+begin_src python
+
+print("Hello, World!")
+# nueva línea al terminar de escribir el código.
+
+#+end_src
+
+
+Es una buena práctica terminar el cursor en una nueva línea.
+
+* String Manipulation
+La manera para poder imprimir strings en diferentes líneas usando una sola función es usando =\n= a esto se le llama =scape sequence= y hay unos cuantos que cumplen diferentes funciones como espacios, cambiar el cursor al inicio de una nueva línea ó al final, etc...
+
+#+begin_src python
+
+print("Hello, World!\nHello, World!")
+
+#+end_src
+
+** Concatenate
+Se pueden combinar strings usando el signo =+= en la función =print=. Por ejemplo:
+#+begin_src python
+
+print("Hello " + "World!")
+
+#+end_src
+
+Dejando un espacio al final de /Hello/ evita que el string se imprima todo junto, también se pueden agregar espacio usando comillas vacías:
+
+#+begin_src python
+
+print("Hello" + " " + World!)
+
+#+end_src
+
+* input function
+Sirve para poder ingresar datos.
+
+#+begin_src python
+
+input("Enter your name: ")
+
+#+end_src
+
+También se pueden combinar para concatenar strings usando la función =print=
+
+#+begin_src python
+
+print("Hello " + input("What is your name?") + "!")
+
+# en este caso el input tiene que tratarse como un string porque el dato que recibirá es lo que terminará reemplazando ese input.
+
+# quedará algo así
+
+print("Hello " + "Jonathan" + "!")
+
+>> Hello Jonathan!
+
+#+end_src
+
+* Variables
+
+Almacenan datos en la memoria. Incluso se pueden combinar con funciones
+
+#+begin_src python
+
+name = input("What is your name?")
+
+print(name)
+
+#+end_src
+
+** Function len()
+
+Sirve para saber lo largo que es un string,
+
+#+begin_src python
+
+print(len(input("What is your name?")))
+
+# otra forma de escribir este código usando variables
+username = input("What is your name?")
+lenght = len(username)
+print(lenght)
+
+#+end_src
+
+
+* Trabajo final
+
+#+begin_src python
+
+print("Welcome to the Band Name Generator.")
+
+city = input("What's the name of the city you grew up in?\n")
+pet = input("Whta's your pet's name?\n")
+print("Your band name could be " + city +  " " + pet)
+
+
+#+end_src
