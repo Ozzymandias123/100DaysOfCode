@@ -1,0 +1,4 @@
+#+title: 100 Days of Python - Day 5
+#+AUTHOR: iony-nuez
+#+DESCRIPTION: Notas del quinto día de 100 para aprender Python.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
